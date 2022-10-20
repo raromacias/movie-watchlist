@@ -1,8 +1,8 @@
 import MovieCard from "./MovieCard";
 const Watchlist = (props) => {
-    const {watchList, removeMovie, }= props
+    const {watchList, removeMovie }= props
      const movieDisplay = watchList.map((movie) => {
-        return <MovieCard watchlist={watchList} removeMovie={removeMovie} movie={movie}/>
+        return <MovieCard watchList={watchList} removeMovie={removeMovie} movie={movie}/>
      })
     return (
          <div className="watchlist">

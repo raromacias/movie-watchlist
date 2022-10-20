@@ -22,13 +22,13 @@ useEffect(() => {
 getData();
 }, [page]);
 
-  const addMovie = (movie) => setWatchList([...watchList, movie]);
+  const addMovie = (movie) => setWatchList(prevState =>  [...prevState,movie]);
 
-  const removeMovie = (movie) => {
-    const newState = watchList.filter((mov)=> {
-      return mov!==movie;
-    })
-    setWatchList(newState)
+  function removeMovie(movie) {
+    const newState = watchList.filter((mov) => {
+      return mov !== movie;
+    });
+    setWatchList(newState);
   }
   
   return (

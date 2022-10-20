@@ -1,9 +1,7 @@
 const MovieCard = (props) => {
    const {movie, addMovie, removeMovie, watchList} = props;
-   let inWatchlist = watchList.filter(mov => {
-    return mov.id === movie.id;
-   })
-   const button = inWatchlist.length === 0 ? (<button onClick={() => addMovie(movie)}>Add to List</button>) : (<button onClick={() => removeMovie(movie)}>Remove</button>)
+   const inWatchlist = watchList.filter((mov) => mov.id === movie.id);
+   const button = inWatchlist.length === 0 ? <button onClick={(() => addMovie(movie))}>Add to List</button> : <button onClick={(() => removeMovie(movie))}>Remove</button>;
     return (
         <div className="movie-card">
             <div>
@@ -11,6 +9,7 @@ const MovieCard = (props) => {
                 <h3>{movie.original_title}</h3>
             </div>
             {button}
+           
         </div>
     );
 }
